@@ -1,10 +1,10 @@
-guessNums = []
+guess_nums = []
 boards = []
-winningBoards = []
+winning_boards = []
 
 # create boards
 with open("./day4-input.txt", "r") as f:
-    guessNums = [int(num) for num in (f.readline().split(","))]
+    guess_nums = [int(num) for num in (f.readline().split(","))]
     board = []
     count = 0
     for line in f:
@@ -15,7 +15,7 @@ with open("./day4-input.txt", "r") as f:
             boards.append(board)
             board = []
 
-def checkBoard(board, row, col):
+def check_board(board, row, col):
     bingo = True
     for num in board[row]:
         if num > -1:
@@ -31,25 +31,25 @@ def checkBoard(board, row, col):
 
     return bingo
 
-def calculateScore(board, bingoNum):
+def calculate_score(board, bingo_num):
     score = 0
     for rows in board:
         for num in rows:
             if num > -1:
                 score += num
 
-    return score * bingoNum
+    return score * bingo_num
 
 def guess():
     scores = []
-    for guessNum in guessNums:
+    for guess_num in guess_nums:
         for i in range(0, len(boards)):
             board = boards[i]
             guessed = False
-            for rowNum in range(0, len(board[0])):
-                row = board[rowNum]
+            for row_num in range(0, len(board[0])):
+                row = board[row_num]
                 for col in range(0, len(row)):
-                    if guessNum == row[col]:
+                    if guess_num == row[col]:
                         if row[col] == 0:
                             row[col] = -1
                         else:
@@ -60,11 +60,11 @@ def guess():
                 if guessed:
                     break
 
-            if checkBoard(board, rowNum, col):
-                score = calculateScore(board, guessNum)
-                if winningBoards.count(i) < 1:
+            if check_board(board, row_num, col):
+                score = calculate_score(board, guess_num)
+                if winning_boards.count(i) < 1:
                     scores.append(score)
-                    winningBoards.append(i)
+                    winning_boards.append(i)
 
     return scores.pop()
 

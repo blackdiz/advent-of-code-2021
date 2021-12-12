@@ -1,10 +1,10 @@
-with open("./part1-input.txt", "r") as f:
-    increasementCount = 0
+with open("./day1-input.txt", "r") as f:
+    increasement_count = 0
     first = f.readline()
     second = f.readline()
     while first and second:
         if int(second) - int(first) > 0:
-            increasementCount += 1
+            increasement_count += 1
         first = second
         second = f.readline()
-    print(increasementCount)
+    print(increasement_count)
