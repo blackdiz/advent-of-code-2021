@@ -1,6 +1,6 @@
 list = []
-with open("./day3-input.txt", "r") as f:
-    list = [line.replace("\n", "") for line in f]
+with open('./day3-input.txt', 'r') as f:
+    list = [line.replace('\n', '') for line in f]
 
 def find_oxygen(list, pos, final_pos):
     if pos == final_pos or len(list) == 1:
@@ -10,7 +10,7 @@ def find_oxygen(list, pos, final_pos):
     zeros = 0
     groups = [[], []]
     for num in list:
-        if num[pos] == "1":
+        if num[pos] == '1':
             ones += 1
             groups[1].append(num)
         else:
@@ -30,7 +30,7 @@ def find_co2(list, pos, final_pos):
     zeros = 0
     groups = [[], []]
     for num in list:
-        if num[pos] == "1":
+        if num[pos] == '1':
             ones += 1
             groups[1].append(num)
         else:

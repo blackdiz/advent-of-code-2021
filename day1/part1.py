@@ -1,4 +1,4 @@
-with open("./day1-input.txt", "r") as f:
+with open('./day1-input.txt', 'r') as f:
     increasement_count = 0
     first = f.readline()
     second = f.readline()

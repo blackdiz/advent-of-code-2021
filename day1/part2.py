@@ -1,5 +1,5 @@
 int_list = []
-with open("./day1-input.txt", "r") as f:
+with open('./day1-input.txt', 'r') as f:
     int_list = [int(i) for i in f]
 
 start = 0

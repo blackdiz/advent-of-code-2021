@@ -1,7 +1,7 @@
 import sys
 
-with open("./day7-input.txt", "r") as f:
-    crabs = [int(c) for c in f.readline().split(",")]
+with open('./day7-input.txt', 'r') as f:
+    crabs = [int(c) for c in f.readline().split(',')]
     max_position = max(crabs)
     min_position = min(crabs)
     minimum_cost = sys.maxsize

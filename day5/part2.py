@@ -1,7 +1,7 @@
-with open("./day5-input.txt", "r") as f:
+with open('./day5-input.txt', 'r') as f:
     coordinate = []
     for line in f:
-        coordinate.append([[int(c) for c in coordinates.split(",")] for coordinates in line.replace("\n", "").split(" -> ")])
+        coordinate.append([[int(c) for c in coordinates.split(',')] for coordinates in line.replace('\n', '').split(' -> ')])
 
     dot_count = 0
     matrix = {}

@@ -2,12 +2,12 @@ guess_nums = []
 boards = []
 
 # create boards
-with open("./day4-input.txt", "r") as f:
-    guess_nums = [int(num) for num in (f.readline().split(","))]
+with open('./day4-input.txt', 'r') as f:
+    guess_nums = [int(num) for num in (f.readline().split(','))]
     board = []
     count = 0
     for line in f:
-        if len(line.replace("\n", "")):
+        if len(line.replace('\n', '')):
             board.append([int(num) for num in line.split()])
             count += 1
         if count % 5 == 0 and board:

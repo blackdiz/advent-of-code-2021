@@ -1,6 +1,6 @@
-with open("./day6-input.txt", "r") as f:
+with open('./day6-input.txt', 'r') as f:
     initial = {}
-    for fish in f.readline().split(","):
+    for fish in f.readline().split(','):
         initial[int(fish)] = initial.get(int(fish), 0)
         initial[int(fish)] = initial[int(fish)] + 1
 
