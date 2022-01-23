@@ -10,16 +10,7 @@ with open('./day10-input.txt', 'r') as f:
                 stack.append(symbol)
             elif [']', ')', '}', '>'].count(symbol) != 0:
                 pop_symbol = stack.pop()
-                if symbol == ']' and pop_symbol != '[':
-                    score = score + score_table[symbol]
-                    break
-                if symbol == ')' and pop_symbol != '(':
-                    score = score + score_table[symbol]
-                    break
-                if symbol == '}' and pop_symbol != '{':
-                    score = score + score_table[symbol]
-                    break
-                if symbol == '>' and pop_symbol != '<':
+                if symbol == ']' and pop_symbol != '[' or symbol == ')' and pop_symbol != '(' or symbol == '}' and pop_symbol != '{' or symbol == '>' and pop_symbol != '<':
                     score = score + score_table[symbol]
                     break
 
